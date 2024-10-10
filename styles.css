@@ -1,0 +1,251 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Black Background */
+    color: #fff; /* White Text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #ff0099, #493240); /* Pink to Dark Pink Gradient */
+    text-align: center;
+    padding: 40px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 10px 0;
+}
+
+header p {
+    font-size: 1.3em;
+    margin: 10px 0;
+    animation: fadeIn 1s ease-in-out 0.5s; /* Delay for subtitle */
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background-color: #ff6699; /* Lighter Pink */
+    color: #fff;
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Section Styles */
+section {
+    margin: 50px 0;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: rgba(26, 26, 26, 0.9); /* Slightly transparent dark background for sections */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+section h2 {
+    color: #ff0099; /* Pink */
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Increased font size for better emphasis */
+    border-bottom: 2px solid #ff6699; /* Bottom border */
+    padding-bottom: 10px;
+}
+
+/* Button Styles */
+.button {
+    background-color: #ff0099; /* Pink Button */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #ff6699; /* Lighter Pink on Hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4); /* Pink shadow on hover */
+}
+
+/* Audio Player Styles */
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.audio-player audio {
+    width: 100%;
+    max-width: 500px;
+    margin: 15px 0;
+    border-radius: 5px;
+    background-color: #333; /* Dark background for audio players */
+    border: 2px solid #ff0099; /* Pink border */
+}
+
+/* Gallery Styles */
+.photo-gallery,
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo-gallery img,
+.image-grid img {
+    width: calc(33.333% - 20px);
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.photo-gallery img:hover,
+.image-grid img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.6); /* Pink glow effect */
+}
+
+/* Smash or Pass Game Styles */
+.smash-pass {
+    text-align: center;
+}
+
+.choice-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.person {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for person boxes */
+    color: #ff0099; /* Pink Text */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 10px;
+    font-size: 1.5em;
+    cursor: pointer; /* Change cursor to pointer */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.person:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.6); /* Pink glow effect */
+}
+
+.button-container {
+    margin: 20px 0;
+}
+
+#choices {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #ff0099; /* Pink */
+}
+
+/* Lists for Smash and Pass */
+#smash-list, #pass-list {
+    margin-top: 20px;
+}
+
+#smash-list h3, #pass-list h3 {
+    color: #ff0099; /* Pink */
+}
+
+/* Countdown Styles */
+#countdownDisplay {
+    font-size: 2em;
+    margin-top: 20px;
+    color: #ff0099; /* Pink */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    background-color: #1a1a1a; /* Dark Footer */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    font-size: 1.2em;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    section h2 {
+        font-size: 2em; /* Adjusted font size for smaller screens */
+    }
+    .button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+    .photo-gallery img,
+    .image-grid img {
+        width: calc(50% - 20px); /* Responsive images */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+    section h2 {
+        font-size: 1.8em; /* Further adjusted for smaller screens */
+    }
+    .photo-gallery img,
+    .image-grid img {
+        width: calc(100% - 20px); /* Full width for mobile */
+    }
+}
