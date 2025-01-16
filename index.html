@@ -3,234 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Rashi, with Love</title>
+    <title>Rashi's Birthday Surprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Maps API Script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvlt7FEzQ-Nx8zYXX_UGMKOLqyJWnsT9o&callback=initMap" async defer></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Header with Navigation -->
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#perfect-section">Why You’re Perfect</a></li>
-                    <li><a href="#memories-section">Memories</a></li>
-                    <li><a href="#playlist-section">Playlist</a></li>
-                    <li><a href="#messages-section">Messages</a></li>
-                    <li><a href="#gallery-section">Gallery</a></li>
-                    <li><a href="#smash-pass-section">Smash or Pass</a></li>
-                    <li><a href="#countdown">Special Day Countdown</a></li>
-                </ul>
-            </nav>
-            <h1>To My Home Rashi</h1>
-            <p>Your smile is my favorite thing in the world. You deserve all the love and joy.</p>
-        </header>
-
-        <!-- Why You're Perfect Section -->
-        <section id="perfect-section" class="perfection">
-            <h2>Why You’re Perfect</h2>
-            <p>Rashi, you're perfect because of the way you make everything better just by being in it...</p>
-            <a href="note.pdf" download="Ra.pdf" class="button">Download Note</a>
-        </section>
-
-        <!-- Memories Section -->
-        <section id="memories-section" class="memories">
-            <h2>Our Special Memories</h2>
-            <div class="photo-gallery">
-                <img src="img1.png" alt="Memory 1">
-                <img src="img2.png" alt="Memory 2">
-                <img src="img3.png" alt="Memory 3">
+    <header>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Rashi's Birthday</h1>
+                <p>Celebrating the beautiful bond we share, no matter the distance.</p>
+                <a href="#celebrate" class="cta-button">Yayyyy</a>
             </div>
-        </section>
+        </div>
+    </header>
 
-        <!-- Playlist Section -->
-        <section id="playlist-section" class="playlist">
-            <h2>Your Happy Playlist</h2>
-            <div class="audio-player">
-                <audio controls>
-                    <source src="Justin Bieber - Ghost.mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
-                <audio controls>
-                    <source src="Marshmello_Bastille_-_Happier_CeeNaija.com_.mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
-                <audio controls>
-                    <source src="Ed-Sheeran-Perfect-(HipHopKit.com).mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </section>
+    <section id="celebrate" class="celebrate-section">
+        <div class="section-content">
+            <h2>Our Journey Together</h2>
+            <p>From moments of laughter to memories we cherish, here’s to the friendship that keeps growing every day.</p>
+        </div>
+    </section>
 
-        <!-- Random Messages Section -->
-        <section id="messages-section" class="messages">
-            <h2>Here’s a Random Message for You!</h2>
-            <button class="button" onclick="showRandomMessage()">Click Me!</button>
-            <p id="message"></p>
-        </section>
+    <section id="playlist" class="playlist-section">
+        <div class="section-content">
+            <h2>Your Personalized Playlist</h2>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3mrjwIyBJUHpRqgASGBibr?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </section>
 
-        <!-- Smash or Pass Game Section -->
-        <section id="smash-pass-section" class="smash-pass">
-            <h2>Smash or Pass Game!</h2>
-            <p>Choose wisely!</p>
-            <div class="choice-container">
-                <div class="person" id="personA" onclick="choose('smash', 'personA')">Person A</div>
-                <div class="person" id="personB" onclick="choose('pass', 'personB')">Person B</div>
-            </div>
-            <div class="button-container">
-                <button class="button" onclick="startGame()">Start Game</button>
-                <p id="choices"></p>
-            </div>
-            <div id="smash-list">
-                <h3>Smash:</h3>
-                <ul id="smash"></ul>
-            </div>
-            <div id="pass-list">
-                <h3>Pass:</h3>
-                <ul id="pass"></ul>
-            </div>
-        </section>
+    <!-- New Section for Google Maps and Animated Distance -->
+    <section id="map-distance" class="map-distance-section">
+        <div class="section-content">
+            <h2>Distance Between Us</h2>
+            <p>Here’s how far apart we are!</p>
+            <div id="map" style="width: 100%; height: 400px; margin-bottom: 20px;"></div>
+        </div>
+    </section>
 
-        <!-- Special Day Countdown Section -->
-        <section id="countdown" class="countdown">
-            <h2>Countdown to Our Special Day!</h2>
-            <p>Set a date for a special occasion:</p>
-            <input type="date" id="specialDate" />
-            <button class="button" onclick="startCountdown()">Start Countdown</button>
-            <div id="countdownDisplay"></div>
-        </section>
+    <!-- Notes Section -->
+    <section id="notes" class="notes-section">
+        <div class="notes-section">
+            <h2>Leave a Note!</h2>
+            <form id="notes-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <textarea id="NOTES" placeholder="Write your note here..." required></textarea>
+                <button type="submit">Post Note</button>
+            </form>
+        </div>
+        
+        <div id="message-container" class="messages-container">
+            <h2>Notes:</h2>
+            <!-- Messages will be loaded here dynamically -->
+        </div>          
+    </section>
 
-        <!-- New Gallery Section -->
-        <section id="gallery-section" class="gallery">
-            <h2>Your Beautiful Moments</h2>
-            <div class="image-grid">
-                <img src="img4.png" alt="Gallery Image 1">
-                <img src="img5.png" alt="Gallery Image 2">
-                <img src="img6.png" alt="Gallery Image 3">
-                <img src="img7.png" alt="Gallery Image 4">
-            </div>
-        </section>
+    <!-- Game Section with Button -->
+    <section id="game" class="game-section">
+        <div class="section-content">
+            <h2>Stick Figure Shooter</h2>
+            <p>Test your skills and protect Sheersh from his enemies!</p>
+            <br></br>
+            <a href="game.html" class="cta-button">Play the Game</a>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>Created with love by Malay</p>
-        </footer>
-    </div>
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Crafted with love by Malay.</p>
+    </footer>
 
-    <script>
-        // JavaScript for Random Messages
-        function showRandomMessage() {
-            const messages = [
-                "You are amazing!", "Keep smiling, Rashi!", "You light up the world!",
-                "Everything will be alright!", "You make everything better!",
-                "Your smile makes my day!", "You are my happiness!",
-                "You are the reason for my smile.", "Your kindness is a gift to everyone.",
-                "You bring out the best in me.", "Your laughter is contagious!",
-                "You are a ray of sunshine!", "You are one in a million.",
-                "You make my heart skip a beat.", "You are simply the best!",
-                "Your joy is infectious!", "You light up my world.",
-                "You are beautiful inside and out!", "You have a heart of gold.",
-                "You are a treasure to me.", "Your presence is a gift.",
-                "You make every day special.", "You inspire me to be better.",
-                "You are a blessing in my life.", "Your strength is admirable.",
-                "You are unique and special.", "Your creativity knows no bounds.",
-                "You have a beautiful soul.", "You are loved more than you know.",
-                "Your beauty radiates from within.", "You make my dreams come true.",
-                "You are the reason I believe in love.", "You are a masterpiece.",
-                "You make my heart sing!", "You are an angel in disguise.",
-                "Your smile brightens my darkest days.", "You are my favorite distraction.",
-                "You have a magical presence.", "You are my heart's desire.",
-                "You are the apple of my eye.", "You are the light in my life.",
-                "You make the world a better place.", "You are my everything.",
-                "You have the most incredible spirit.", "You are simply enchanting!",
-                "You are my sunshine on a rainy day.", "You are worth more than gold.",
-                "Your love is a beautiful melody.", "You are a beacon of hope.",
-                "You have a smile that can change the world.", "You are extraordinary.",
-                "You have the power to make me smile!", "You are a rare gem.",
-                "You are my muse.", "Your heart is as big as the universe.",
-                "You are a wonderful friend.", "You have the ability to brighten any room.",
-                "You are the definition of beauty.", "You are cherished beyond words.",
-                "Your spirit is unbreakable.", "You have a heart full of love.",
-                "You are truly special to me.", "You are the light of my life.",
-                "You make my life complete!", "You are my dream come true.",
-                "You have a talent for making people feel special.", "You are a gift to humanity.",
-                "You are perfect just the way you are.", "You make life worth living.",
-                "You are so incredibly loved!"
-            ];
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            const messageElement = document.getElementById("message");
-            messageElement.innerHTML = randomMessage;
-        }
-
-        // Smash or Pass Game
-        const names = ['malay.privv', "aditinarkar.07's profile picture", "nischay_shetty_06's profile picture", 'Nischay shetty', 'shetty.buff', "smruti.chande's profile picture", 'Smruti Chande', 'aadiagrawall', "yuval.shah's profile picture", 'Yuval⚓️', 'taniishahahaa', "sanvvee's profile picture", 'sanvi', 'nithyaspamm', "sakshi_mahajan29's profile picture", 'Sakshi Mahajan', 'kartik.tea', "priyxnshigupta's profile picture", 'Priyanshiii<3', 'srussssshti', "trrishaasingh's profile picture", 'Trisha Singh', 'trrishahahaha', "shivam.singh3129's profile picture", 'Shivam singh', 'aaarraaavvvv', 'soberhumai', '_aaravvpal', '_lorddev', "goat_ad9's profile picture", 'Abhinav', 'arhaan_anwarr', "lordsoham's profile picture", 'Soham Pawar', 'malay.gangar', "fr_shubham19's profile picture", 'Shubham Dutta', 'agrimreaperr', "sakshiiphadtaree's profile picture", 'sakshii ♡', 'samikshaguptaa_13', "karan__2005's profile picture", 'Gurkaran Ahuja', 'nottyashh', "pranamya_bodke's profile picture", "dhammeshahire's profile picture", 'Dhammesh Ahire', 'shravanpawar.96k', "_rizzshii's profile picture", 'Rishiiii', 'risha.dance', "architmahalle's profile picture", 'Archit', '_epicureaa', "parth_shirke_17's profile picture", 'Parth', 'ojaschoudhari13', "just__x__me's profile picture", 'Chinmay', 'aryandinakaran', "_mubeen_khan_16's profile picture", 'Mohammad Mubeen Khan', 'suvanlokhande', "krrishapipraiya's profile picture", 'krisha', 'madhuryapatil', "sarxa_w's profile picture", 'sara', 'anabolicseb', "ganesh_kamath_15's profile picture", 'GANESH KAMATH', 'shlok4reall', "okaiitsari's profile picture", 'Ari <3', 'soumyashethh', "__anushkaa_1203's profile picture", 'Anushka', 'saketthakur_03', "unnatidoshi_'s profile picture", 'Unnati Doshi', 'pranamyawasnotfound', "bhoomii.27's profile picture", 'Bhoomi Patil', 'realkrismusic', "divyaaa.jc's profile picture", 'Divya', 'sanjanapawar23', "whokilledherdad's profile picture", 'Sian', 'amit_pal_0', "hhhrrssh's profile picture", 'Harsh Patil', 'ariiyaaaa._', "deep_bendale's profile picture", 'db°', 'surisharvil', "adityaamore_'s profile picture", 'aditya', '_shrish.alva_', "samikshha__'s profile picture", 'samiksha', '_karaaaaan_', "lolitsnasha's profile picture", 'nasha', 'unnatid_', "anisha_1611's profile picture", 'Anisha', 'nealbabel_', "_11d1rsh_'s profile picture", 'aadarsh', '_jr.thapa_', "pav_warrier's profile picture", 'Pavitra', 'vedannttt.10', "sahilll.v's profile picture", "ashikaa.rawat's profile picture", 'ashika', 'shreyii_pvt', 'sayli_karle']; // Sample name list
-
-        function startGame() {
-            const personA = document.getElementById('personA');
-            const personB = document.getElementById('personB');
-
-            // Randomly select two unique names from the list
-            const randomNames = [];
-            while (randomNames.length < 2) {
-                const randomIndex = Math.floor(Math.random() * names.length);
-                const randomName = names[randomIndex];
-                if (!randomNames.includes(randomName)) {
-                    randomNames.push(randomName);
-                }
-            }
-            personA.innerText = randomNames[0];
-            personB.innerText = randomNames[1];
-            document.getElementById('choices').innerText = ''; // Clear previous choices
-        }
-
-        function choose(action, personId) {
-            const choicesElement = document.getElementById('choices');
-            const smashList = document.getElementById('smash');
-            const passList = document.getElementById('pass');
-            const selectedPerson = document.getElementById(personId).innerText;
-
-            // Update choices based on action
-            if (action === 'smash') {
-                choicesElement.innerHTML = selectedPerson + " is a Smash!";
-                smashList.innerHTML += `<li>${selectedPerson}</li>`;
-            } else {
-                choicesElement.innerHTML = selectedPerson + " is a Pass!";
-                passList.innerHTML += `<li>${selectedPerson}</li>`;
-            }
-
-            startGame(); // Start a new game round after making a choice
-        }
-
-        // Countdown Functionality
-        function startCountdown() {
-            const specialDate = document.getElementById("specialDate").value;
-            const countdownDisplay = document.getElementById("countdownDisplay");
-
-            if (!specialDate) {
-                alert("Please select a date!");
-                return;
-            }
-
-            const targetDate = new Date(specialDate).getTime();
-            const interval = setInterval(() => {
-                const now = new Date().getTime();
-                const distance = targetDate - now;
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                countdownDisplay.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-                if (distance < 0) {
-                    clearInterval(interval);
-                    countdownDisplay.innerHTML = "EXPIRED";
-                }
-            }, 1000);
-        }
-    </script>
+    <!-- Include Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
